@@ -14,7 +14,7 @@ export default function Test() {
   return (
     <div>
       <MyDiv>
-        <Vercel className="w-48" />
+        <Vercel />
       </MyDiv>
     </div>
   );
