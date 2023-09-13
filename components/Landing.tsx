@@ -42,11 +42,11 @@ export default function Landing() {
     },
   }));
   return (
-    <section className="relative bg-sherpa text-white w-full pt-64 pb-52">
+    <section className="relative bg-sherpa text-white w-full pt-44 pb-52">
       <LeftImage>
         <BgLeft height={200} width={200} />
       </LeftImage>
-      <div className="max-w-7xl m-auto flex flex-col md:flex-row justify-evenly items-center">
+      <div className="max-w-6xl m-auto relative z-10 flex flex-col md:flex-row justify-between">
         <h1 className="text-[100px] leading-none font-bold">
           Find the
           <br />

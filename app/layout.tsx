@@ -1,8 +1,10 @@
 "use client";
+import Nav from "@/components/Nav";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Livvic } from "next/font/google";
 import { ThemeProvider } from "styled-components";
+import Footer from "@/components/Footer";
 
 const livvic = Livvic({ weight: ["400", "700"], subsets: ["latin-ext"] });
 
@@ -52,7 +54,11 @@ export default function RootLayout({
       <body
         className={`bg-sherpa text-white grid grid-rows-[minmax(7.5rem,auto)_auto_minmax(12.5rem,auto)] desktop:grid-rows-[minmax(auto,7.5rem)_auto_minmax(auto,12.5rem)] ${livvic.className}`}
       >
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <Nav />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

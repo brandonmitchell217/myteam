@@ -16,7 +16,7 @@ export default function BuildProp() {
     zIndex: 2,
   }));
 
-  const Title = styled.h2(() => ({
+  const Title = styled.h1(() => ({
     "&::before": {
       content: "''",
       display: "block",
@@ -32,7 +32,7 @@ export default function BuildProp() {
       icon: <PersonIcon width={72} height={72} />,
       title: "Experienced Individuals",
       description:
-        "Our network is made up of highly experienced proffessionals who are passionate about what they do.",
+        "Our network is made up of highly experienced professionals who are passionate about what they do.",
     },
     {
       icon: <CogIcon width={72} height={72} />,
@@ -48,18 +48,25 @@ export default function BuildProp() {
     },
   ];
   return (
-    <section className="relative bg-swamp text-white w-full pt-32 pb-32 overflow-hidden">
-      <div className="max-w-7xl m-auto flex flex-col md:flex-row justify-evenly">
-        <Title className="text-[50px] leading-none font-bold max-w-[17ch]">
+    <section className="relative bg-swamp text-white w-full pt-40 pb-40 overflow-hidden">
+      <div className="max-w-6xl m-auto relative z-10 flex flex-col md:flex-row gap-12 justify-between">
+        <Title className="text-[32px] lg:text-[50px] leading-none font-bold max-w-[17ch]">
           Build & manage distributed teams like no one else.
         </Title>
         <ul className="space-y-12">
           {props.map((prop) => (
-            <li key={prop.title} className="flex items-center gap-5">
+            <li
+              key={prop.title}
+              className="flex flex-col md:flex-row items-center gap-5 text-center md:text-left"
+            >
               <div>{prop.icon}</div>
               <div className="space-y-3">
-                <span className="text-flory text-2xl">{prop.title}</span>
-                <p className="max-w-[436px]">{prop.description}</p>
+                <span className="text-flory font-bold text-lg lg:text-xl">
+                  {prop.title}
+                </span>
+                <p className="max-w-[436px] w-full font-semibold text-[15px]">
+                  {prop.description}
+                </p>
               </div>
             </li>
           ))}
