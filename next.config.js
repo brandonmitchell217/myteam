@@ -1,34 +1,18 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-module.exports = {
+const nextConfig = {
   compiler: {
     styledComponents: true,
   },
   webpack(config) {
-    // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
-    );
-
-    config.module.rules.push(
-      // Reapply the existing rule, but only for svg imports ending in ?url
-      {
-        ...fileLoaderRule,
-        test: /\.svg$/i,
-        resourceQuery: /url/, // *.svg?url
-      },
-      // Convert all other *.svg imports to React components
-      {
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        resourceQuery: { not: /url/ }, // exclude if *.svg?url
-        use: ["@svgr/webpack"],
-      }
-    );
-
-    // Modify the file loader rule to ignore *.svg, since we have it handled now.
-    fileLoaderRule.exclude = /\.svg$/i;
+    // Allow importing *.svg files as React Components (see gloo-ui/components/Icon/all.tsx)
+    // If you need to load in a normal *.svg file without converting it to a React Component, set it up this way:
+    // https://react-svgr.com/docs/webpack/#use-svgr-and-asset-svg-in-the-same-project
+    config.module.rules.push({
+      test: /\.svg$/i,
+      use: [{ loader: "@svgr/webpack", options: { dimensions: false } }],
+    });
 
     return config;
   },
 };
+module.exports = nextConfig;
