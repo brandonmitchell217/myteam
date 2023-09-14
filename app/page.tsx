@@ -1,12 +1,21 @@
-import Card from "@/components/Card";
-import Test from "@/components/Test";
+import BuildProp from "@/components/BuildProp";
+import Cta from "@/components/Cta";
+import Landing from "@/components/Landing";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center bg-green-950 h-screen">
-      {/* <Test /> */}
-      <Card />
-      <h3 className="text-red-500 uppercase font-bold text-5xl">Hello!</h3>
+    <main>
+      <Landing
+        title="Find the best talent"
+        wordToHighlight="talent"
+        description="Finding the right people and building high performing teams can be
+          hard. Most companies aren't tapping into the abundance of global
+          talent. We're about to change that."
+      />
+      <BuildProp />
+      <Testimonials />
+      <Cta />
     </main>
   );
 }
