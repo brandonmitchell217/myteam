@@ -48,8 +48,8 @@ export default function BuildProp() {
     },
   ];
   return (
-    <section className="relative bg-swamp text-white w-full pt-40 pb-40 overflow-hidden">
-      <div className="max-w-6xl m-auto relative z-10 flex flex-col md:flex-row gap-12 justify-between">
+    <section className="relative bg-[#012F34] text-white w-full pt-40 pb-40 overflow-hidden">
+      <div className="max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 lg:px-0 flex flex-col md:flex-row gap-12 justify-between">
         <Title className="text-[32px] lg:text-[50px] leading-none font-bold max-w-[17ch]">
           Build & manage distributed teams like no one else.
         </Title>

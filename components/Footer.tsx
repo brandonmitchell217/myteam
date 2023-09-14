@@ -25,7 +25,7 @@ export default function Footer() {
   ];
   return (
     <footer className="bg-swamp text-white/60 py-12 px-10 text-center">
-      <div className="max-w-6xl m-auto flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-center">
+      <div className="max-w-6xl m-auto px-4 sm:px-8 md:px-4 lg:px-0 flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between items-center">
         <div className="md:w-full flex flex-col gap-6 md:gap-0 md:flex-row justify-center items-center md:justify-between lg:justify-stretch md:space-x-20">
           <div className="flex flex-col gap-6">
             <Link href="/">

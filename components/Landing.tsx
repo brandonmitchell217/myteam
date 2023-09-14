@@ -3,63 +3,119 @@ import React from "react";
 import styled from "@emotion/styled";
 import BgLeft from "../public/bg-pattern-home-1.svg";
 import BgBottom from "../public/bg-pattern-home-2.svg";
+import BgBottomAbout from "../public/bg-pattern-about-1-mobile-nav-1.svg";
 import Image from "next/image";
 import { useTheme } from "styled-components";
+import { mq } from "@/lib/util";
+import { twMerge } from "tailwind-merge";
+import { usePathname } from "next/navigation";
 
-const breakpoints = [640, 768, 1024, 1280, 1536];
+interface Props {
+  title: string;
+  wordToHighlight?: string;
+  description: string;
+}
 
-export default function Landing() {
+export default function Landing({
+  title,
+  wordToHighlight,
+  description,
+}: Props) {
+  const pathname = usePathname();
   const theme = useTheme();
-  const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+  const words = title.split(/\s+/);
 
   const LeftImage = styled.div(() => ({
     position: "absolute",
-    top: "50%",
+    top: "60%",
     left: "-100px",
     zIndex: 2,
-    transform: "translateY(-50%)",
+    transform: "translateY(-60%)",
+    display: "none",
+    [mq[1]]: {
+      display: "block",
+    },
     [mq[2]]: {
-      top: "60%",
-      transform: "translateY(-60%)",
+      top: "50%",
+      transform: "translateY(-50%)",
     },
   }));
   const BottomImage = styled.div(() => ({
     position: "absolute",
     bottom: "0",
-    right: "15%",
+    left: pathname === "/about" ? undefined : "50%",
+    right: pathname === "/about" ? "-100px" : undefined,
     zIndex: 2,
-    transform: "translateX(15%)",
+    transform: pathname === "/about" ? undefined : "translateX(-50%)",
+    [mq[2]]: {
+      left: pathname === "/about" ? undefined : "unset",
+      right: pathname === "/about" ? undefined : "15%",
+      transform: pathname === "/about" ? undefined : "translateX(15%)",
+    },
   }));
 
   const Paragraph = styled.p(() => ({
     "&::before": {
-      content: "''",
-      display: "block",
-      width: "50px",
-      height: "3px",
-      background: theme.colors.baked,
-      marginBottom: "6rem",
+      [mq[2]]: {
+        content: "''",
+        display: "block",
+        width: "50px",
+        height: "3px",
+        background:
+          pathname === "/about" ? theme.colors.flory : theme.colors.baked,
+        marginBottom: pathname === "/about" ? "3rem" : "6rem",
+      },
     },
   }));
   return (
-    <section className="relative bg-sherpa text-white w-full pt-44 pb-52">
-      <LeftImage>
-        <BgLeft height={200} width={200} />
-      </LeftImage>
-      <div className="max-w-6xl m-auto relative z-10 flex flex-col md:flex-row justify-between">
-        <h1 className="text-[100px] leading-none font-bold">
-          Find the
-          <br />
-          best <span className="text-flory">talent</span>
+    <section
+      className={`relative bg-sherpa text-white w-full ${
+        pathname === "/about" ? twMerge("py-32") : twMerge("pt-44 pb-52")
+      }`}
+    >
+      {pathname === "/about" ? null : (
+        <LeftImage>
+          <BgLeft height={200} width={200} />
+        </LeftImage>
+      )}
+
+      <div
+        className={`max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 lg:px-0 flex flex-col gap-6 md:gap-0 md:flex-row  items-center md:items-stretch ${
+          pathname === "/about"
+            ? twMerge("md:gap-[14vw]")
+            : twMerge("justify-between")
+        }`}
+      >
+        <h1
+          className={`text-[40px]  leading-none font-bold max-w-[10ch] ${
+            pathname === "/about" ? "lg:text-[65px]" : "lg:text-[100px]"
+          }`}
+        >
+          {wordToHighlight
+            ? words.map((word, index) => (
+                <span
+                  key={index}
+                  className={word === wordToHighlight ? "text-flory" : ""}
+                >
+                  {word}{" "}
+                </span>
+              ))
+            : title}
         </h1>
-        <Paragraph className="text-xl font-semibold max-w-[494px] pb-4">
-          Finding the right people and building high performing teams can be
-          hard. Most companies aren&apos;t tapping into the abundance of global
-          talent. We&apos;re about to change that.
+        <Paragraph
+          className={`text-[15px] leading-loose  font-semibold  pb-4 text-center md:text-left ${
+            pathname === "/about" ? "md:text-lg" : "max-w-[494px] md:text-xl"
+          }`}
+        >
+          {description}
         </Paragraph>
       </div>
       <BottomImage>
-        <BgBottom height={100} width={358} />
+        {pathname === "/about" ? (
+          <BgBottomAbout height={200} width={200} />
+        ) : (
+          <BgBottom height={100} width={358} />
+        )}
       </BottomImage>
     </section>
   );

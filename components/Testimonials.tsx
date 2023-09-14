@@ -47,17 +47,17 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative bg-sherpa text-white w-full pt-40 pb-40 overflow-hidden">
+    <section className="relative bg-[#004047] text-white w-full pt-40 pb-40 overflow-hidden">
       <TopImage>
         <BgTop height={100} width={147} />
       </TopImage>
-      <div className="max-w-6xl m-auto space-y-16 text-center">
+      <div className="max-w-6xl m-auto px-4 sm:px-8 md:px-4 lg:px-0 space-y-16 text-center">
         <Title className="max-w-[975px] m-auto text-[32px] lg:text-[50px] leading-none font-bold ">
           Delivering real results for top companies. Some of our{" "}
           <span className="text-baked">success stories.</span>
         </Title>
 
-        <div className="grid grid-rows-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="relative space-y-4">
               <QuoteIcon
