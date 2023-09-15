@@ -25,6 +25,14 @@ export default function BeforeParagraph({ text }: { text: string }) {
 
   const Paragraph = styled.p(() => ({
     "&::before": {
+      [mq[1]]: {
+        content: "''",
+        display: "block",
+        width: "50px",
+        height: "3px",
+        background: isPathname === 1 ? theme.colors.flory : theme.colors.baked,
+        marginBottom: "3rem",
+      },
       [mq[2]]: {
         content: "''",
         display: "block",
@@ -37,7 +45,7 @@ export default function BeforeParagraph({ text }: { text: string }) {
   }));
   return (
     <Paragraph
-      className={`pb-4 text-sm font-semibold text-center md:text-left ${
+      className={`pb-4 text-sm md:text-base lg:text-lg leading-7 md:leading-loose font-semibold text-center md:text-left ${
         isPathname === 1
           ? twMerge("md:text-lg pr-0 md:pr-4")
           : twMerge("max-w-[494px] md:text-xl")

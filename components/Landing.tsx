@@ -68,15 +68,17 @@ export default function Landing({
       )}
 
       <div
-        className={`max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 lg:px-0 flex flex-col gap-6 md:gap-0 md:flex-row  items-center md:items-stretch ${
+        className={`max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 xl:px-0 flex flex-col gap-6 md:gap-0 md:flex-row  items-center md:items-stretch ${
           pathname === "/about"
             ? twMerge("md:gap-[14vw]")
             : twMerge("justify-between")
         }`}
       >
         <h1
-          className={`text-[40px]  leading-none font-bold max-w-[10ch] ${
-            pathname === "/about" ? "lg:text-[65px]" : "lg:text-[100px]"
+          className={`text-[40px] leading-none font-bold md:max-w-[10ch] ${
+            pathname === "/about"
+              ? "md:text-[65px]"
+              : "md:text-[65px] lg:text-[100px]"
           }`}
         >
           {wordToHighlight

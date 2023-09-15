@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Logo from "../public/logo.svg";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Button from "./Button";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -57,12 +58,9 @@ export default function Nav() {
           </ul>
         </div>
 
-        <Link
-          href={"/contact"}
-          className="hidden md:block py-2 px-8 border-2 border-white rounded-3xl bg-transparent font-bold lowercase hover:bg-white hover:text-sherpa hover:scale-110 hover:underline hover:decoration-sherpa transition-all duration-200"
-        >
+        <Button link={"/contact"} className={"hidden md:block"}>
           Contact Us
-        </Link>
+        </Button>
 
         <Menu
           className="md:hidden cursor-pointer"
@@ -97,13 +95,9 @@ export default function Nav() {
               </li>
             ))}
           </ul>
-          <Link
-            href={"/contact"}
-            className="py-2 px-8 border-2 border-white rounded-3xl bg-transparent font-bold lowercase hover:bg-white hover:text-sherpa hover:scale-110 hover:underline hover:decoration-sherpa transition-all duration-200"
-            onClick={() => setShowMenu(!showMenu)}
-          >
+          <Button link={"/contact"} onClick={() => setShowMenu(!showMenu)}>
             Contact Us
-          </Link>
+          </Button>
         </div>
       </div>
     </nav>

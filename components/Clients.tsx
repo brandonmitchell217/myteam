@@ -13,11 +13,11 @@ const LeftImage = styled.div(() => ({
 
 export default function Clients({ clients }: any) {
   return (
-    <section className="relative bg-daintree text-white py-32">
+    <section className="relative bg-daintree text-white pt-16 pb-20 md:py-32">
       <LeftImage>
         <BgLeft height={200} width={200} />
       </LeftImage>
-      <div className="max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 lg:px-0 space-y-16 md:space-y-12">
+      <div className="max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 xl:px-0 space-y-16 md:space-y-12">
         <h1 className="text-[40px] lg:text-[48px] font-bold text-center">
           Some of our clients
         </h1>

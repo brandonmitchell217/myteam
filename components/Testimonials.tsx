@@ -30,7 +30,7 @@ export default function Testimonials({
       <TopImage>
         <BgTop height={100} width={147} />
       </TopImage>
-      <div className="max-w-6xl m-auto px-4 sm:px-8 md:px-4 lg:px-0 space-y-16 text-center">
+      <div className="max-w-6xl m-auto px-4 sm:px-8 md:px-4 xl:px-0 space-y-16 text-center">
         <h1 className="max-w-[975px] m-auto text-[32px] lg:text-[50px] leading-none font-bold ">
           Delivering real results for top companies. Some of our{" "}
           <span className="text-baked">success stories.</span>
@@ -45,7 +45,7 @@ export default function Testimonials({
                 className="absolute top-0 left-1/2 -translate-x-1/2"
               />
 
-              <p className="font-semibold text-sm relative z-10">
+              <p className="max-w-md m-auto font-semibold text-sm relative z-10">
                 &#8220;{testimonial.quote}&#8221;
               </p>
               <div className="">

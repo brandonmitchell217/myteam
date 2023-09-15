@@ -6,12 +6,17 @@ import BgBottom from "../public/bg-pattern-home-3.svg";
 import PersonIcon from "../public/icon-person.svg";
 import CogIcon from "../public/icon-cog.svg";
 import ChartIcon from "../public/icon-chart.svg";
+import { mq } from "@/lib/util";
 
 const BottomImage = styled.div(() => ({
   position: "absolute",
-  bottom: "0",
+  top: "0",
   right: "-100px",
   zIndex: 2,
+  [mq[1]]: {
+    top: "unset",
+    bottom: 0,
+  },
 }));
 
 export default function BuildProp() {
@@ -50,7 +55,7 @@ export default function BuildProp() {
   ];
   return (
     <section className="relative bg-daintree text-white w-full pt-40 pb-40 overflow-hidden">
-      <div className="max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 lg:px-0 flex flex-col md:flex-row gap-12 justify-between">
+      <div className="max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4 xl:px-0 flex flex-col md:flex-row gap-12 sm:gap-20 md:gap-12 justify-between">
         <Title className="text-[32px] lg:text-[50px] leading-none font-bold max-w-[17ch]">
           Build & manage distributed teams like no one else.
         </Title>
@@ -58,7 +63,7 @@ export default function BuildProp() {
           {props.map((prop) => (
             <li
               key={prop.title}
-              className="flex flex-col md:flex-row items-center gap-5 text-center md:text-left"
+              className="flex flex-col sm:flex-row justify-center md:justify-stretch items-center gap-5 text-center sm:text-left"
             >
               <div>{prop.icon}</div>
               <div className="space-y-3">
