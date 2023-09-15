@@ -12,21 +12,12 @@ module.exports = {
         sherpa: "#014E56",
         flory: "#F67E7E",
 
-        midnightGreen: "#014E56",
-        lightCoral: "#F67E7E",
-
         // secondary
-        baked: "#79C8C7", //
-        casul: "#2C6269", //
-        cyprus: "#004047", //
-        daintree: "#012F34", //
-        swamp: "#002529", //
-
-        raptureBlue: "#79C8C7", //
-        policeBlue: "#2C6269", //
-        jungleGreen: "#004047", //
-        sacramentoGreen: "#012F34", //
-        darkGreen: "#002529", //
+        baked: "#79C8C7",
+        casul: "#2C6269",
+        cyprus: "#004047",
+        daintree: "#012F34",
+        swamp: "#002529",
       },
       fontFamily: {
         livvic: ["Livvic", "sans-serif"],
