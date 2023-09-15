@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ReactElement } from "react";
 import PersonIcon from "../public/icon-person.svg";
 import CogIcon from "../public/icon-cog.svg";
 import ChartIcon from "../public/icon-chart.svg";
@@ -7,22 +7,22 @@ import BgLeft from "../public/bg-pattern-about-2-contact-1.svg";
 import BgRight from "../public/bg-pattern-contact-2.svg";
 import styled from "styled-components";
 
-export default function ContactLanding() {
-  const LeftImage = styled.div(() => ({
-    position: "absolute",
-    top: "25%",
-    left: "-100px",
-    zIndex: 2,
-    transform: "translateY(-25%)",
-  }));
-  const RightImage = styled.div(() => ({
-    position: "absolute",
-    bottom: "0",
-    right: "-100px",
-    zIndex: 2,
-  }));
+const LeftImage = styled.div(() => ({
+  position: "absolute",
+  top: "10%",
+  left: "-100px",
+  zIndex: 2,
+  transform: "translateY(-10%)",
+}));
+const RightImage = styled.div(() => ({
+  position: "absolute",
+  bottom: "0",
+  right: "-100px",
+  zIndex: 2,
+}));
 
-  const props = [
+export default function ContactLanding() {
+  const props: { icon: ReactElement; title: string }[] = [
     {
       icon: <PersonIcon width={72} height={72} />,
       title: "The quality of our talent network",
@@ -41,11 +41,11 @@ export default function ContactLanding() {
 
   return (
     <section className="relative bg-sherpa pt-8 pb-32 md:pt-24">
-      <LeftImage>
+      <LeftImage className="hidden sm:block">
         <BgLeft height={200} width={200} />
       </LeftImage>
       <div className="max-w-6xl m-auto relative z-10 px-4 sm:px-8 md:px-4">
-        <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-12">
+        <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-12 md:gap-3 xl:gap-12">
           <div className="flex-1 space-y-6">
             <h1 className="font-bold text-[64px]">Contact</h1>
             <h2 className="font-bold text-[32px] text-flory">Ask us about</h2>
@@ -106,7 +106,7 @@ export default function ContactLanding() {
 
               <button
                 type="submit"
-                className="py-2 bg-white text-sherpa font-bold rounded-2xl lowercase w-[125px]"
+                className="py-2 bg-white text-sherpa font-bold text-lg rounded-full lowercase w-[125px] hover:bg-flory hover:text-white hover:scale-110 transition-all duration-200"
               >
                 Submit
               </button>

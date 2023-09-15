@@ -14,7 +14,7 @@ export default function StaffCard({ person }: { person: StaffProps }) {
   const FlipCard = ({ person }: { person: StaffProps }) => {
     return (
       <div
-        className={`absolute h-full w-full bg-[#002529] text-white`}
+        className={`absolute h-full w-full bg-swamp text-white`}
         style={
           isFlip
             ? {
@@ -56,7 +56,7 @@ export default function StaffCard({ person }: { person: StaffProps }) {
   return (
     <div className="relative w-full h-[256px]">
       <div
-        className={`absolute h-full w-full py-24 bg-swamp flex flex-col justify-center items-center gap-4`}
+        className={`absolute h-full w-full py-24 bg-daintree flex flex-col justify-center items-center gap-4`}
         style={
           isFlip
             ? {

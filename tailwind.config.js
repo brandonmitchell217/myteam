@@ -12,20 +12,27 @@ module.exports = {
         sherpa: "#014E56",
         flory: "#F67E7E",
 
+        midnightGreen: "#014E56",
+        lightCoral: "#F67E7E",
+
         // secondary
-        baked: "#79C8C7",
-        casul: "#2C6269",
-        cyprus: "#004047",
-        daintree: "#012F34",
-        swamp: "#002529",
+        baked: "#79C8C7", //
+        casul: "#2C6269", //
+        cyprus: "#004047", //
+        daintree: "#012F34", //
+        swamp: "#002529", //
+
+        raptureBlue: "#79C8C7", //
+        policeBlue: "#2C6269", //
+        jungleGreen: "#004047", //
+        sacramentoGreen: "#012F34", //
+        darkGreen: "#002529", //
       },
       fontFamily: {
         livvic: ["Livvic", "sans-serif"],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontSize: {
+        sm: ["0.938rem", { lineHeight: "1.25rem" }],
       },
     },
   },

@@ -6,7 +6,10 @@ import { Livvic } from "next/font/google";
 import { ThemeProvider } from "styled-components";
 import Footer from "@/components/Footer";
 
-const livvic = Livvic({ weight: ["400", "700"], subsets: ["latin-ext"] });
+const livvic = Livvic({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin-ext"],
+});
 
 // export const metadata: Metadata = {
 //   title: "MyTeam Multipage",
