@@ -1,12 +1,17 @@
 import Landing from "@/components/Landing";
 import { CtaProps, StaffProps } from "@/lib/types";
-import StaffCard from "@/app/about/_components/StaffCard";
 import React from "react";
 import Staff from "@/app/about/_components/Staff";
 import Clients from "./_components/Clients";
 import Cta from "@/components/Cta";
+import type { Metadata } from "next";
 
 // TODO: FIX THIS STATE FOR CARD ROTATING
+
+export const metadata: Metadata = {
+  title: "MyTeam Multipage - About",
+  description: "Design by Frontend Mentor",
+};
 
 export default function AboutPage() {
   const staff: StaffProps[] = [
