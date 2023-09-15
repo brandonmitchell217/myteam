@@ -1,12 +1,39 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../public/logo.svg";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 // TODO: Look at nav links space x with flex-col
 
 export default function Nav() {
+  const pathname = usePathname();
   const [showMenu, setShowMenu] = useState(false);
+  const [isActive, setIsActive] = useState<number>();
+
+  useEffect(() => {
+    switch (pathname) {
+      case "/":
+        pathname === "/" && setIsActive(0);
+        break;
+      case "/about":
+        pathname === "/about" && setIsActive(1);
+        break;
+      default:
+        setIsActive(undefined);
+    }
+  }, [pathname]);
+
+  const navLinks = [
+    {
+      label: "Home",
+      path: "/",
+    },
+    {
+      label: "About",
+      path: "/about",
+    },
+  ];
   return (
     <nav className="pt-12 lg:pt-16 relative">
       <div className="max-w-6xl m-auto px-4 sm:px-8 md:px-4 lg:px-0 flex justify-between items-center lowercase font-bold">
@@ -16,16 +43,18 @@ export default function Nav() {
           </Link>
 
           <ul className="hidden md:flex space-x-10 text-lg">
-            <li>
-              <Link href="/" className="hover:text-flory">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-flory">
-                About
-              </Link>
-            </li>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={link.path}
+                  className={`hover:text-flory ${
+                    isActive === index ? "text-flory" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
