@@ -54,9 +54,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <body
-        className={`bg-sherpa text-white grid grid-rows-[minmax(7.5rem,auto)_auto_minmax(12.5rem,auto)] desktop:grid-rows-[minmax(auto,7.5rem)_auto_minmax(auto,12.5rem)] ${livvic.className}`}
-      >
+      <body className={`bg-sherpa text-white ${livvic.className}`}>
         <ThemeProvider theme={theme}>
           <Nav />
           {children}

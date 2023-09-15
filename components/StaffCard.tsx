@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CrossIcon from "../public/icon-cross.svg";
@@ -9,20 +9,20 @@ import CloseIcon from "../public/icon-close.svg";
 import { StaffProps } from "@/lib/types";
 
 export default function StaffCard({ person }: { person: StaffProps }) {
-  const [isFlip, setIsFlip] = React.useState(false);
+  const [isFlip, setIsFlip] = useState(false);
 
   const FlipCard = ({ person }: { person: StaffProps }) => {
     return (
       <div
-        className={`absolute h-full w-full bg-swamp text-white`}
+        className={`absolute h-full w-full bg-swamp text-white transition-all duration-500`}
         style={
           isFlip
             ? {
-                transform: "perspective(1000px) rotateY(0)",
+                transform: "rotateY(0)",
                 backfaceVisibility: "hidden",
               }
             : {
-                transform: "perspective(1000px) rotateY(180deg)",
+                transform: "rotateY(-180deg)",
                 backfaceVisibility: "hidden",
               }
         }
@@ -44,7 +44,7 @@ export default function StaffCard({ person }: { person: StaffProps }) {
           </ul>
         </div>
         <div
-          className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-baked hover:bg-flory text-swamp p-5 rounded-full cursor-pointer"
+          className="absolute z-20 -bottom-5 left-1/2 -translate-x-1/2 bg-baked hover:bg-flory text-swamp p-5 rounded-full cursor-pointer"
           onClick={() => setIsFlip(!isFlip)}
         >
           <CloseIcon height={17} width={18} />
@@ -56,15 +56,15 @@ export default function StaffCard({ person }: { person: StaffProps }) {
   return (
     <div className="relative w-full h-[256px]">
       <div
-        className={`absolute h-full w-full py-24 bg-daintree flex flex-col justify-center items-center gap-4`}
+        className={`absolute h-full w-full py-24 bg-daintree flex flex-col justify-center items-center gap-4 transition-all duration-500`}
         style={
           isFlip
             ? {
-                transform: "perspective(1000px) rotateY(-180deg)",
+                transform: "rotateY(180deg)",
                 backfaceVisibility: "hidden",
               }
             : {
-                transform: "perspective(1000px) rotateY(0)",
+                transform: "rotateY(0)",
                 backfaceVisibility: "hidden",
               }
         }
@@ -74,6 +74,7 @@ export default function StaffCard({ person }: { person: StaffProps }) {
           alt={`Image of ${person.name}`}
           height={98}
           width={98}
+          loading="lazy"
           className="rounded-full border-baked border-2"
         />
         <div className="text-center mb-6">
@@ -82,7 +83,7 @@ export default function StaffCard({ person }: { person: StaffProps }) {
         </div>
 
         <div
-          className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-flory hover:bg-baked text-swamp p-5 rounded-full cursor-pointer"
+          className="absolute z-20 -bottom-5 left-1/2 -translate-x-1/2 bg-flory hover:bg-baked text-swamp p-5 rounded-full cursor-pointer"
           onClick={() => setIsFlip(!isFlip)}
         >
           <CrossIcon height={16} width={16} />
