@@ -22,10 +22,8 @@ module.exports = {
       fontFamily: {
         livvic: ["Livvic", "sans-serif"],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontSize: {
+        sm: ["0.938rem", { lineHeight: "1.25rem" }],
       },
     },
   },

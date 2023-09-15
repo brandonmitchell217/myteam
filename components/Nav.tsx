@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Logo from "../public/logo.svg";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-// TODO: Look at nav links space x with flex-col
 
 export default function Nav() {
   const pathname = usePathname();
@@ -60,7 +59,7 @@ export default function Nav() {
 
         <Link
           href={"/contact"}
-          className="hidden md:block py-2 px-6 border-2 border-white rounded-3xl bg-transparent hover:bg-white hover:text-sherpa hover:scale-110 transition-all"
+          className="hidden md:block py-2 px-8 border-2 border-white rounded-3xl bg-transparent font-bold lowercase hover:bg-white hover:text-sherpa hover:scale-110 hover:underline hover:decoration-sherpa transition-all duration-200"
         >
           Contact Us
         </Link>
@@ -84,20 +83,24 @@ export default function Nav() {
         />
         <div className="bg-casul w-1/2 h-full py-20 px-12">
           <ul className="flex flex-col gap-8 text-lg mt-12 mb-32 font-bold lowercase">
-            <li>
-              <Link href="/" className="hover:text-flory">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-flory">
-                About
-              </Link>
-            </li>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={link.path}
+                  className={`hover:text-flory ${
+                    isActive === index ? "text-flory" : ""
+                  }`}
+                  onClick={() => setShowMenu(!showMenu)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
           <Link
             href={"/contact"}
-            className="py-2 px-6 border-2 border-white rounded-3xl bg-transparent font-bold lowercase hover:bg-white hover:text-sherpa hover:scale-110 transition-all"
+            className="py-2 px-8 border-2 border-white rounded-3xl bg-transparent font-bold lowercase hover:bg-white hover:text-sherpa hover:scale-110 hover:underline hover:decoration-sherpa transition-all duration-200"
+            onClick={() => setShowMenu(!showMenu)}
           >
             Contact Us
           </Link>

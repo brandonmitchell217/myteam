@@ -1,5 +1,5 @@
 import Landing from "@/components/Landing";
-import { StaffProps } from "@/lib/types";
+import { CtaProps, StaffProps } from "@/lib/types";
 import StaffCard from "@/components/StaffCard";
 import React from "react";
 import Staff from "@/components/Staff";
@@ -7,7 +7,6 @@ import Clients from "@/components/Clients";
 import Cta from "@/components/Cta";
 
 // TODO: FIX THIS STATE FOR CARD ROTATING
-// TODO: Separate landing paragraph into its own component
 
 export default function AboutPage() {
   const staff: StaffProps[] = [
@@ -77,6 +76,14 @@ export default function AboutPage() {
       image: "/logo-gadgets-now.png",
     },
   ];
+
+  const CtaData: {
+    text: CtaProps["text"];
+    cta: { text: CtaProps["button_text"]; link: CtaProps["button_link"] };
+  } = {
+    text: "Ready to get started?",
+    cta: { text: "Contact Us", link: "/contact" },
+  };
   return (
     <main>
       <Landing
@@ -85,7 +92,11 @@ export default function AboutPage() {
       />
       <Staff staff={staff} />
       <Clients clients={clients} />
-      <Cta />
+      <Cta
+        text={CtaData.text}
+        button_text={CtaData.cta.text}
+        button_link={CtaData.cta.link}
+      />
     </main>
   );
 }

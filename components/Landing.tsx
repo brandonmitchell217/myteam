@@ -4,11 +4,10 @@ import styled from "@emotion/styled";
 import BgLeft from "../public/bg-pattern-home-1.svg";
 import BgBottom from "../public/bg-pattern-home-2.svg";
 import BgBottomAbout from "../public/bg-pattern-about-1-mobile-nav-1.svg";
-import Image from "next/image";
-import { useTheme } from "styled-components";
 import { mq } from "@/lib/util";
 import { twMerge } from "tailwind-merge";
 import { usePathname } from "next/navigation";
+import BeforeParagraph from "./BeforeParagraph";
 
 interface Props {
   title: string;
@@ -16,30 +15,30 @@ interface Props {
   description: string;
 }
 
+const LeftImage = styled.div(() => ({
+  position: "absolute",
+  top: "60%",
+  left: "-100px",
+  zIndex: 2,
+  transform: "translateY(-60%)",
+  display: "none",
+  [mq[1]]: {
+    display: "block",
+  },
+  [mq[2]]: {
+    top: "50%",
+    transform: "translateY(-50%)",
+  },
+}));
+
 export default function Landing({
   title,
   wordToHighlight,
   description,
 }: Props) {
   const pathname = usePathname();
-  const theme = useTheme();
   const words = title.split(/\s+/);
 
-  const LeftImage = styled.div(() => ({
-    position: "absolute",
-    top: "60%",
-    left: "-100px",
-    zIndex: 2,
-    transform: "translateY(-60%)",
-    display: "none",
-    [mq[1]]: {
-      display: "block",
-    },
-    [mq[2]]: {
-      top: "50%",
-      transform: "translateY(-50%)",
-    },
-  }));
   const BottomImage = styled.div(() => ({
     position: "absolute",
     bottom: "0",
@@ -54,23 +53,12 @@ export default function Landing({
     },
   }));
 
-  const Paragraph = styled.p(() => ({
-    "&::before": {
-      [mq[2]]: {
-        content: "''",
-        display: "block",
-        width: "50px",
-        height: "3px",
-        background:
-          pathname === "/about" ? theme.colors.flory : theme.colors.baked,
-        marginBottom: pathname === "/about" ? "3rem" : "6rem",
-      },
-    },
-  }));
   return (
     <section
       className={`relative bg-sherpa text-white w-full ${
-        pathname === "/about" ? twMerge("py-32") : twMerge("pt-44 pb-52")
+        pathname === "/about"
+          ? twMerge("py-20 md:py-32")
+          : twMerge("pt-44 pb-52")
       }`}
     >
       {pathname === "/about" ? null : (
@@ -102,13 +90,7 @@ export default function Landing({
               ))
             : title}
         </h1>
-        <Paragraph
-          className={`text-[15px] leading-loose  font-semibold  pb-4 text-center md:text-left ${
-            pathname === "/about" ? "md:text-lg" : "max-w-[494px] md:text-xl"
-          }`}
-        >
-          {description}
-        </Paragraph>
+        <BeforeParagraph text={description} />
       </div>
       <BottomImage>
         {pathname === "/about" ? (

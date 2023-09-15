@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Logo from "../public/logo.svg";
 import FacebookIcon from "../public/icon-facebook.svg";
 import TwitterIcon from "../public/icon-twitter.svg";
@@ -6,7 +6,7 @@ import PinterestIcon from "../public/icon-pinterest.svg";
 import Link from "next/link";
 
 export default function Footer() {
-  const socials = [
+  const socials: { name: string; icon: ReactElement; link: string }[] = [
     {
       name: "Facebook",
       icon: <FacebookIcon height={24} width={24} />,
@@ -32,7 +32,7 @@ export default function Footer() {
               <Logo width={160} height={40} />
             </Link>
 
-            <ul className="flex w-full justify-between md:space-x-10 text-lg text-white">
+            <ul className="flex w-full justify-between text-lg text-white font-semibold lowercase">
               <li>
                 <Link href="/" className="hover:text-flory">
                   Home
@@ -46,7 +46,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-1 font-semibold text-[15px]">
+          <div className="space-y-1 font-semibold text-sm">
             <p>987 Hillcrest Lane</p>
             <p>Irvine, CA</p>
             <p>California 92714</p>
@@ -63,7 +63,7 @@ export default function Footer() {
             ))}
           </ul>
 
-          <p className="text-[15px] font-semibold">
+          <p className="text-sm font-semibold">
             Copyright 2023. All Rights Reserved
           </p>
         </div>
