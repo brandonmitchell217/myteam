@@ -5,7 +5,7 @@ import BgBottom from "../public/bg-pattern-home-6-about-5.svg";
 import styled from "@emotion/styled";
 import { CtaProps } from "@/lib/types";
 import { Route } from "next";
-import Button from "./Button";
+import Button from "./ui/Button";
 
 const BottomImage = styled.div(() => ({
   position: "absolute",

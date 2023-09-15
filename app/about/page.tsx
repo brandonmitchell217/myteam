@@ -1,9 +1,9 @@
 import Landing from "@/components/Landing";
 import { CtaProps, StaffProps } from "@/lib/types";
-import StaffCard from "@/components/StaffCard";
+import StaffCard from "@/app/about/_components/StaffCard";
 import React from "react";
-import Staff from "@/components/Staff";
-import Clients from "@/components/Clients";
+import Staff from "@/app/about/_components/Staff";
+import Clients from "./_components/Clients";
 import Cta from "@/components/Cta";
 
 // TODO: FIX THIS STATE FOR CARD ROTATING

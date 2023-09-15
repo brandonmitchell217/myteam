@@ -5,8 +5,8 @@ import { StaffProps } from "@/lib/types";
 import StaffCard from "./StaffCard";
 import styled from "styled-components";
 import { mq } from "@/lib/util";
-import BgLeft from "../public/bg-pattern-about-2-contact-1.svg";
-import BgRight from "../public/bg-pattern-home-4-about-3.svg";
+import BgLeft from "../../../public/bg-pattern-about-2-contact-1.svg";
+import BgRight from "../../../public/bg-pattern-home-4-about-3.svg";
 
 const LeftImage = styled.div(() => ({
   position: "absolute",

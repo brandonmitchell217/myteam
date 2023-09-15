@@ -1,12 +1,13 @@
 "use client";
 import React, { ReactElement } from "react";
-import PersonIcon from "../public/icon-person.svg";
-import CogIcon from "../public/icon-cog.svg";
-import ChartIcon from "../public/icon-chart.svg";
-import BgLeft from "../public/bg-pattern-about-2-contact-1.svg";
-import BgRight from "../public/bg-pattern-contact-2.svg";
+import PersonIcon from "../../../public/icon-person.svg";
+import CogIcon from "../../../public/icon-cog.svg";
+import ChartIcon from "../../../public/icon-chart.svg";
+import BgLeft from "../../../public/bg-pattern-about-2-contact-1.svg";
+import BgRight from "../../../public/bg-pattern-contact-2.svg";
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "../../../components/ui/Button";
+import Form from "./Form";
 
 const LeftImage = styled.div(() => ({
   position: "absolute",
@@ -64,7 +65,7 @@ export default function ContactLanding() {
           </div>
 
           <div className="flex-1 w-full md:w-auto">
-            <form className="flex flex-col gap-6">
+            {/* <form className="flex flex-col gap-6">
               <div>
                 <input
                   type="text"
@@ -106,7 +107,8 @@ export default function ContactLanding() {
               </div>
 
               <Button type={"submit"}>Submit</Button>
-            </form>
+            </form> */}
+            <Form />
           </div>
         </div>
       </div>

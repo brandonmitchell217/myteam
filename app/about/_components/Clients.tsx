@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
-import BgLeft from "../public/bg-pattern-about-4.svg";
+import BgLeft from "../../../public/bg-pattern-about-4.svg";
 
 const LeftImage = styled.div(() => ({
   position: "absolute",
