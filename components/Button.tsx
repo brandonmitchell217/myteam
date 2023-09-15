@@ -1,6 +1,5 @@
 import { Route } from "next";
 import Link from "next/link";
-import { type } from "os";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
