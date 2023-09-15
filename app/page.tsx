@@ -2,7 +2,13 @@ import BuildProp from "@/components/BuildProp";
 import Cta from "@/components/Cta";
 import Landing from "@/components/Landing";
 import Testimonials from "@/components/Testimonials";
-import { CtaProps, TestimonialProps } from "@/lib/types";
+import { TestimonialProps } from "@/lib/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "MyTeam Multipage - Home",
+  description: "Design by Frontend Mentor",
+};
 
 export default function Home() {
   const testimonials: TestimonialProps[] = [

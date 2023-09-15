@@ -1,7 +1,7 @@
 "use client";
 import Nav from "@/components/ui/Nav";
 import "./globals.css";
-import type { Metadata } from "next";
+
 import { Livvic } from "next/font/google";
 import { ThemeProvider } from "styled-components";
 import Footer from "@/components/ui/Footer";
@@ -10,11 +10,6 @@ const livvic = Livvic({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin-ext"],
 });
-
-// export const metadata: Metadata = {
-//   title: "MyTeam Multipage",
-//   description: "Design by Frontend Mentor",
-// };
 
 const theme = {
   colors: {
@@ -28,19 +23,10 @@ const theme = {
   },
   screens: {
     sm: "640px",
-    // => @media (min-width: 640px) { ... }
-
     md: "768px",
-    // => @media (min-width: 768px) { ... }
-
     lg: "1024px",
-    // => @media (min-width: 1024px) { ... }
-
     xl: "1280px",
-    // => @media (min-width: 1280px) { ... }
-
     xl2: "1536px",
-    // => @media (min-width: 1536px) { ... }
   },
 };
 
