@@ -1,4 +1,4 @@
-import ContactLanding from "@/components/ContactLanding";
+import ContactLanding from "@/app/contact/_components/ContactLanding";
 import React from "react";
 
 export default function ContactPage() {

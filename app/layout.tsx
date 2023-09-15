@@ -1,10 +1,10 @@
 "use client";
-import Nav from "@/components/Nav";
+import Nav from "@/components/ui/Nav";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Livvic } from "next/font/google";
 import { ThemeProvider } from "styled-components";
-import Footer from "@/components/Footer";
+import Footer from "@/components/ui/Footer";
 
 const livvic = Livvic({
   weight: ["400", "500", "600", "700"],

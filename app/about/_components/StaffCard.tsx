@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import CrossIcon from "../public/icon-cross.svg";
-import TwitterIcon from "../public/icon-twitter.svg";
-import LinkedInIcon from "../public/icon-linkedin.svg";
-import CloseIcon from "../public/icon-close.svg";
+import CrossIcon from "../../../public/icon-cross.svg";
+import TwitterIcon from "../../../public/icon-twitter.svg";
+import LinkedInIcon from "../../../public/icon-linkedin.svg";
+import CloseIcon from "../../../public/icon-close.svg";
 import { StaffProps } from "@/lib/types";
 
 export default function StaffCard({ person }: { person: StaffProps }) {

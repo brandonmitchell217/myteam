@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import Logo from "../public/logo.svg";
-import FacebookIcon from "../public/icon-facebook.svg";
-import TwitterIcon from "../public/icon-twitter.svg";
-import PinterestIcon from "../public/icon-pinterest.svg";
+import Logo from "../../public/logo.svg";
+import FacebookIcon from "../../public/icon-facebook.svg";
+import TwitterIcon from "../../public/icon-twitter.svg";
+import PinterestIcon from "../../public/icon-pinterest.svg";
 import Link from "next/link";
 
 export default function Footer() {
