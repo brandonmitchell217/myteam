@@ -79,7 +79,7 @@ export default function Nav() {
           size={32}
           onClick={() => setShowMenu(!showMenu)}
         />
-        <div className="bg-casul w-1/2 h-full py-20 px-12">
+        <div className="bg-casul w-1/2 h-full py-20 px-8">
           <ul className="flex flex-col gap-8 text-lg mt-12 mb-32 font-bold lowercase">
             {navLinks.map((link, index) => (
               <li key={index}>
