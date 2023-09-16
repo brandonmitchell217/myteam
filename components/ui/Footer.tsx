@@ -1,11 +1,40 @@
-import React, { ReactElement } from "react";
+"ues client";
+import React, { ReactElement, useEffect, useState } from "react";
 import Logo from "../../public/logo.svg";
 import FacebookIcon from "../../public/icon-facebook.svg";
 import TwitterIcon from "../../public/icon-twitter.svg";
 import PinterestIcon from "../../public/icon-pinterest.svg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const [isActive, setIsActive] = useState<number>();
+
+  useEffect(() => {
+    switch (pathname) {
+      case "/":
+        pathname === "/" && setIsActive(0);
+        break;
+      case "/about":
+        pathname === "/about" && setIsActive(1);
+        break;
+      default:
+        setIsActive(undefined);
+    }
+  }, [pathname]);
+
+  const navLinks = [
+    {
+      label: "Home",
+      path: "/",
+    },
+    {
+      label: "About",
+      path: "/about",
+    },
+  ];
+
   const socials: { name: string; icon: ReactElement; link: string }[] = [
     {
       name: "Facebook",
@@ -33,16 +62,18 @@ export default function Footer() {
             </Link>
 
             <ul className="flex w-full justify-between text-lg text-white font-semibold lowercase">
-              <li>
-                <Link href="/" className="hover:text-flory">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-flory">
-                  About
-                </Link>
-              </li>
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.path}
+                    className={`hover:text-flory ${
+                      isActive === index ? "text-flory" : ""
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
