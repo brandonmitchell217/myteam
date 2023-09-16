@@ -35,7 +35,7 @@ export default function Nav() {
     },
   ];
   return (
-    <nav className="pt-12 lg:pt-16 relative">
+    <nav className="pt-12 py-3 lg:pt-16 lg:pb-6 relative">
       <div className="max-w-6xl m-auto px-4 sm:px-8 md:px-4 lg:px-0 flex justify-between items-center lowercase font-bold">
         <div className="flex items-center space-x-20">
           <Link href="/">
