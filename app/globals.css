@@ -5,6 +5,54 @@
 section {
   overflow-x: hidden;
 }
+.staff-card {
+  position: relative;
+  perspective: 1000px;
+  transition: all 0.8s ease;
+}
+
+.staff-card .inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.staff-card.rotateY180 {
+  transform: rotateY(180deg);
+}
+
+.staff-card.rotateY0 {
+  transform: rotateY(0deg);
+}
+
+.staff-card.rotateY0 .front {
+  backface-visibility: visible;
+}
+
+.staff-card.rotateY180 .back {
+  backface-visibility: visible;
+}
 
 .active-field {
   @apply !border-baked;

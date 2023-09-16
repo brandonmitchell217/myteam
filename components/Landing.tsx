@@ -58,7 +58,7 @@ export default function Landing({
       className={`relative bg-sherpa text-white w-full ${
         pathname === "/about"
           ? twMerge("py-20 md:py-32")
-          : twMerge("pt-44 pb-52")
+          : twMerge("pt-32 pb-44 md:pt-44 md:pb-52")
       }`}
     >
       {pathname === "/about" ? null : (
@@ -78,7 +78,7 @@ export default function Landing({
           className={`text-[40px] leading-none font-bold md:max-w-[10ch] ${
             pathname === "/about"
               ? "md:text-[65px]"
-              : "md:text-[65px] lg:text-[100px]"
+              : "md:text-[65px] lg:text-[100px] text-center md:text-left "
           }`}
         >
           {wordToHighlight
