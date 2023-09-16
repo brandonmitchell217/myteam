@@ -26,7 +26,6 @@ module.exports = {
         sm: ["0.938rem", { lineHeight: "1.25rem" }],
       },
     },
-    backfaceVisibility: ["hidden"],
   },
   plugins: [],
 };
