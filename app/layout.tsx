@@ -39,6 +39,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link
+          rel="icon"
+          href="https://github.com/brandonmitchell217/equalizer/blob/main/public/favicon.png?raw=true"
+        />
       </head>
       <body className={`bg-sherpa text-white ${livvic.className}`}>
         <ThemeProvider theme={theme}>
