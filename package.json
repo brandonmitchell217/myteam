@@ -1,5 +1,6 @@
 {
-  "name": "game-site",
+  "name": "myteam",
+  "author": "Brandon Mitchell",
   "version": "0.1.0",
   "private": true,
   "scripts": {
