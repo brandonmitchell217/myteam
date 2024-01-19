@@ -17,3 +17,8 @@ export interface CtaProps {
   button_text: string;
   button_link: string;
 }
+
+export interface ClientProps {
+  label: string;
+  image: string;
+}
